@@ -715,3 +715,13 @@
 @keyframes fy-page-reveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fy-envelope-hover{0%,100%{translate:0 0}50%{translate:0 -8px}}
 @media(prefers-reduced-motion:reduce){.fy-root .fy-opening-frame,.fy-root .fy-home,.fy-root .fy-page-wrap,.fy-root .fy-envelope-button{animation:none!important}.fy-root .fy-menu-card,.fy-root .fy-polaroid,.fy-root .fy-envelope-button{transition:none!important}}
+
+/* Keep scrapbook copy above decorative paper layers and make navigation reliably clickable. */
+.fy-letter-page { position: relative; isolation: isolate; }
+.fy-letter-copy { position: relative; z-index: 2; }
+.fy-paper { position: relative; z-index: 1; overflow: visible; }
+.fy-memory-gallery { position: relative; z-index: 1; }
+.fy-topbar, .fy-topbar button, .fy-back { pointer-events: auto; }
+.fy-page-wrap { position: relative; z-index: 1; }
+.fy-audio-toggle { display: inline-flex; min-height: 2.8rem; align-items: center; justify-content: center; margin-top: .85rem; padding: .7rem 1.25rem; border: 1px solid #c98788; border-radius: 999px; background: linear-gradient(135deg,#f0c7b5,#d78d91); color: #35131b; font-size: .76rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; }
+.fy-audio-toggle:hover { filter: brightness(1.08); transform: translateY(-1px); }
